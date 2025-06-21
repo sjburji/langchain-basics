@@ -1,3 +1,5 @@
+import os
+import getpass
 from langchain_core.messages import AnyMessage
 from pydantic import BaseModel
 from langchain_core.runnables import RunnableConfig
@@ -5,8 +7,6 @@ from langgraph.prebuilt.chat_agent_executor import AgentState
 from langchain.chat_models import init_chat_model
 from langgraph.prebuilt import create_react_agent
 from langgraph.checkpoint.memory import InMemorySaver
-import os
-import getpass
 
 if not os.environ.get("OPENAI_API_KEY"):
   os.environ["OPENAI_API_KEY"] = getpass.getpass("Enter API key for OpenAI: ")

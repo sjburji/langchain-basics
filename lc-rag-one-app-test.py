@@ -1,12 +1,12 @@
 import bs4
+import getpass
+import os
 from langchain import hub
 from langchain_community.document_loaders import WebBaseLoader
 from langchain_core.documents import Document
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langgraph.graph import START, StateGraph
 from typing_extensions import List, TypedDict
-import getpass
-import os
 from langchain_core.vectorstores import InMemoryVectorStore
 from langchain_google_genai import ChatGoogleGenerativeAI
 
