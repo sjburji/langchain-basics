@@ -18,3 +18,4 @@ Reference - https://python.langchain.com/docs/introduction/
 |lc-active-tools|Test for active tools usage|
 |lc-rag-one-empty-context.py|Setup for basic RAG usage with empty context|
 |lc-rag-one-app-test|RAG App test|
+|lc-rag-one-app|RAG App usage with template|
