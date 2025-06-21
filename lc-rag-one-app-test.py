@@ -51,19 +51,16 @@ class State(TypedDict):
     context: List[Document]
     answer: str
 
-
 # Define application steps
 def retrieve(state: State):
     retrieved_docs = vector_store.similarity_search(state["question"])
     return {"context": retrieved_docs}
-
 
 def generate(state: State):
     docs_content = "\n\n".join(doc.page_content for doc in state["context"])
     messages = prompt.invoke({"question": state["question"], "context": docs_content})
     response = model.invoke(messages)
     return {"answer": response.content}
-
 
 # Compile application and test
 graph_builder = StateGraph(State).add_sequence([retrieve, generate])
